@@ -1,0 +1,27 @@
+{
+  "name": "cashflow_backend",
+  "version": "1.0.0",
+  "description": "Welcome to the backend repository for the Cashflow Management System (CMS) – the heart of our fintech application revolutionizing microfinance institutions (MFIs)!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.0.0",
+    "@aws-amplify/backend-cli": "^1.0.1",
+    "@aws-sdk/client-cognito-identity-provider": "^3.569.0",
+    "@types/aws-lambda": "^8.10.137",
+    "aws-cdk": "^2.140.0",
+    "aws-cdk-lib": "^2.140.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.20.2",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.2.0"
+  }
+}

@@ -1,0 +1,20 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - npm ci --cache .npm --prefer-offline
+        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+frontend:
+  phases:
+    build:
+      commands:
+        - mkdir ./dist && touch ./dist/index.html
+        - curl -X POST -d {} "https://webhooks.amplify.ap-south-1.amazonaws.com/prod/webhooks?id=dea364b4-020c-4dcc-93d8-35539ead0c67&token=VVmep5liXbfhPNUkrjudGZDdcUud6nCqjDNiw3xvI&operation=startbuild" -H "Content-Type:application/json"
+  artifacts:
+    baseDirectory: dist
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
